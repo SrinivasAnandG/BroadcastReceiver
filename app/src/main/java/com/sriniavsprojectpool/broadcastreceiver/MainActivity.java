@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        BroadcastReceiver broadcastReceiver = new BraodcastSample();
-        IntentFilter intentFilter = new IntentFilter(getPackageName().toString());
-        intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-        this.registerReceiver(broadcastReceiver,intentFilter);
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        BroadcastReceiver broadcastReceiver = new BraodcastSample();
+//        IntentFilter intentFilter = new IntentFilter(getPackageName().toString());
+//        intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+//        this.registerReceiver(broadcastReceiver,intentFilter);
+//    }
 }
