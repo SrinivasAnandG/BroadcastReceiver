@@ -18,17 +18,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        BroadcastReceiver broadcastReceiver = new BraodcastSample();
+        IntentFilter intentFilter = new IntentFilter(getPackageName().toString());
+        intentFilter.addAction(Intent.ACTION_POWER_CONNECTED);
+        getApplicationContext().registerReceiver(broadcastReceiver,intentFilter);
 
 
 
     }
 
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        BroadcastReceiver broadcastReceiver = new BraodcastSample();
-//        IntentFilter intentFilter = new IntentFilter(getPackageName().toString());
-//        intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-//        this.registerReceiver(broadcastReceiver,intentFilter);
-//    }
 }
