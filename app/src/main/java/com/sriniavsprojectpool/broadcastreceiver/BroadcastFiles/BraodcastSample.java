@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import androidx.arch.core.executor.TaskExecutor;
+
 
 public class BraodcastSample extends BroadcastReceiver {
     @Override

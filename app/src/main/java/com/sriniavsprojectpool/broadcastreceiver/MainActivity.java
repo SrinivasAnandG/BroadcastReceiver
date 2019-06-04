@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         //the receiver won't get killed untill the app is get killed.
 
 
-        //If reciver is registered through the manifest the system may conclute this register to be week
+        //If reciver is registered through the manifest the system may conclude this register to be week
         // and unimportant and it get killed when system requires memory to reclaim
         BroadcastReceiver broadcastReceiver = new BraodcastSample();
         IntentFilter intentFilter = new IntentFilter(getPackageName().toString());
