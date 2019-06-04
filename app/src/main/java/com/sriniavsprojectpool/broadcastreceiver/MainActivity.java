@@ -18,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        //Broadcast receiver registration with the application so that if activity process killed
+        //the receiver won't get killed untill the app is get killed.
         BroadcastReceiver broadcastReceiver = new BraodcastSample();
         IntentFilter intentFilter = new IntentFilter(getPackageName().toString());
         intentFilter.addAction(Intent.ACTION_POWER_CONNECTED);
