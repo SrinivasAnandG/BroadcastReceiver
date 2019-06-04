@@ -1,6 +1,7 @@
 package com.sriniavsprojectpool.broadcastreceiver;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -30,9 +31,14 @@ public class MainActivity extends AppCompatActivity {
         BroadcastReceiver broadcastReceiver = new BraodcastSample();
         IntentFilter intentFilter = new IntentFilter(getPackageName().toString());
         intentFilter.addAction(Intent.ACTION_POWER_CONNECTED);
+        intentFilter.addAction(getPackageName()+".MY_HELLO");
         getApplicationContext().registerReceiver(broadcastReceiver,intentFilter);
 
 
+        //we are sending broadcast so that app can listen when this peice of code executes
+        Intent intent = new Intent();
+        intent.setAction(getPackageName()+".MY_HELLO");
+        sendBroadcast(intent);
 
     }
 
